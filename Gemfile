@@ -12,6 +12,9 @@ gem 'sass-rails', '~> 4.0.0'
 # Use bootstrap-sass for the front end
 gem 'bootstrap-sass', '~> 3.1.1'
 
+# Use haml instead of erb
+gem 'haml'
+
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
 
