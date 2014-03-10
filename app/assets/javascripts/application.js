@@ -15,3 +15,5 @@
 //= require turbolinks
 //= require bootstrap
 //= require_tree .
+//= require ../../../vendor/assets/javascripts/bootstrap-modal.js
+//= require ../../../vendor/assets/javascripts/bootstrap-modalmanager.js
