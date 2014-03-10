@@ -1,1 +1,34 @@
 @import "bootstrap";
+
+body {
+	padding-top: 50px;
+	padding-bottom: 50px;
+}
+
+.container, html, body {
+	height: 100%;
+}
+
+.bkgd-pic-root {
+	background-image: url(image_path("Chirag and Uma's Engagement-276.jpg"));
+}
+
+.bkgd-pic-fill {
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: contain;
+	height: 100%;
+}
+
+.bkgd-dark {
+	background-color: $navbar-inverse-bg;
+}
+
+.rsvp-bar {
+	position: absolute;
+	bottom: 100px;
+	left: 15px;
+	right: 15px;
+	height: 66px;
+	background-color: rgba(91, 192, 222, 0.5) /* rgb equivalent of bootstrap $brand-info */
+}

@@ -1,0 +1,12 @@
+.bkgd-pic-root.bkgd-pic-fill
+  .row.rsvp-bar.bkgd-opaque-teal
+    = form_tag('/') do
+      .form-group
+        .col-lg-4.col-md-4.col-sm-3.col-xs-2
+        .col-lg-4.col-md-4.col-sm-3.col-xs-2
+          .input-group
+            = text_field_tag(:nil, nil, class: "form-control")
+            %span.input-group-btn
+              %button.btn.btn-default
+                %span.glyphicon.glyphicon-play
+        .col-lg-4.col-md-4.col-sm-3.col-xs-2
