@@ -1,12 +1,14 @@
 .bkgd-pic-root.bkgd-pic-fill
+  = render "layouts/flash"
   .row.rsvp-bar.bkgd-opaque-teal
-    = form_tag('/') do
+    = form_tag(group_finder_path, id: "group-finder-form", remote: true) do
       .form-group
         .col-lg-4.col-md-4.col-sm-3.col-xs-2
         .col-lg-4.col-md-4.col-sm-3.col-xs-2
           .input-group
-            = text_field_tag(:nil, nil, class: "form-control")
+            = text_field_tag(:rsvp_code, nil, class: "form-control", placeholder: "Enter RSVP Code")
             %span.input-group-btn
-              %button.btn.btn-default
+              %button{type: "submit", class: "btn btn-default"}
                 %span.glyphicon.glyphicon-play
         .col-lg-4.col-md-4.col-sm-3.col-xs-2
+%div{ id: "rsvp-modal", class: "modal fade", tabindex: "-1", style: "display: none;", data: { width: "700px" } }
