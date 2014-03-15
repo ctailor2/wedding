@@ -2,4 +2,11 @@
   %button{ type: "button", class: "close", aria: { hidden: "true" }, data: { dismiss: "modal" } } &times;
   %h5.modal-title.text-center= @group.name
 .modal-body.text-center
+  .tab-content
+    .tab-pane.active#members This is the members tab.
+    .tab-pane#response This is the response tab.
 .modal-footer
+  .text-center
+    .btn-group
+      %button{ class: "btn btn-default active", id: "members-btn", href: "#members", data: { toggle: "tab" } } Members
+      %button{ class: "btn btn-default", id: "response-btn", href: "#response", data: { toggle: "tab" } } Response
