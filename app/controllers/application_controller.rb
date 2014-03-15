@@ -5,4 +5,10 @@ class ApplicationController < ActionController::Base
 
 	def index
 	end
+
+	private
+
+		def permitted_params
+			@permitted_params ||= PermittedParams.new(params)
+		end
 end
