@@ -3,7 +3,9 @@
   %h5.modal-title.text-center= @group.name
 .modal-body.text-center
   .tab-content
-    .tab-pane.active#members This is the members tab.
+    .tab-pane.active#members
+      = render partial: "members/new", locals: { group: @group, member: @member }
+      = render partial: "members/show", locals: { group: @group }
     .tab-pane#response This is the response tab.
 .modal-footer
   .text-center

@@ -1,0 +1,9 @@
+.panel.panel-default
+  .panel-body.scroll-height-250
+    %table.table.table-hover#group-member-list
+      %tr
+        %th.text-center First Name
+        %th.text-center Last Name
+        %th.text-center Age Group
+        %th
+          = render partial: "members/member", collection: group.members, locals: { group: group }

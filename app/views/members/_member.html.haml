@@ -1,0 +1,9 @@
+- if member.persisted?
+  %tr
+    %td= member.first_name
+    %td= member.last_name
+    %td= member.age_group.try(:description)
+    %td
+      = form_for :member, url: group_member_path(group, member), remote: true, html: { method: :delete, id: "delete-member-form" } do |f|
+        %button{ type: "submit", class: "btn btn-default btn-xs" }
+          %span.glyphicon.glyphicon-remove
