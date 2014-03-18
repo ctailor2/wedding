@@ -1,9 +1,9 @@
 .panel.panel-default
-  .panel-body.scroll-height-250
+  .panel-body.scroll-y.max-height-225
     %table.table.table-hover#group-member-list
       %tr
         %th.text-center First Name
         %th.text-center Last Name
         %th.text-center Age Group
         %th
-          = render partial: "members/member", collection: group.members, locals: { group: group }
+          = render partial: "members/member", collection: group.saved(:members), locals: { group: group }

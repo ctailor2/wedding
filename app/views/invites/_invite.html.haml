@@ -1,0 +1,6 @@
+.panel.panel-default.text-center
+  %h5= invite.event.title
+  %h5= "# Invited: #{invite.num_invited}"
+  .panel-body
+    %div{ class: "form-group invite-group", data: { invited: invite.num_invited } }
+      = render partial: "invites/member", collection: group.saved(:members), locals: { invite: invite }

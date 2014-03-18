@@ -33,7 +33,10 @@ body {
 	background-color: rgba(91, 192, 222, 0.5) /* rgb equivalent of bootstrap $brand-info */
 }
 
-.scroll-height-250 {
-	max-height: 250px;
+.max-height-225 {
+	max-height: 225px;
+}
+
+.scroll-y {
 	overflow-y: scroll;
 }

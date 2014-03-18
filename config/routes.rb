@@ -3,7 +3,9 @@ Wedding::Application.routes.draw do
 
 	post '/groups/find', to: 'groups#find', as: 'group_finder'
 	resources :groups, only: [] do
+		post '/rsvp', to: 'groups#rsvp', as: 'rsvp'
 		resources :members, only: [:create, :destroy]
+		resources :invites, only: [:index]
 	end
 
   # The priority is based upon order of creation: first created -> highest priority.
