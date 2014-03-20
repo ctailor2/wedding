@@ -13,11 +13,15 @@ $ ->
 		refreshInvites()
 
 	$("#group-finder-form").on "ajax:error", (event) ->
-		$.jGrowl "Group not found - Please try again", { position: "center" }
+		$.jGrowl "Group not found, please try again", { position: "center" }
 
 	$("#rsvp-modal").on "ajax:success", "#group-rsvp-form", (event) ->
 		$("#rsvp-modal").modal("hide")
-		$.jGrowl "Thanks for your RSVP - We look forward to celebrating our wedding with you!", { position: "center" }
+		$.jGrowl "Thanks for your RSVP, we can't wait to celebrate our wedding with you!", { position: "center" }
+
+	$("#rsvp-modal").on "ajax:error", "#group-rsvp-form", (event) ->
+		$("#rsvp-modal").modal("hide")
+		$.jGrowl "Sorry you can't make it, your presence will be missed!", { position: "center" }
 
 	$("#rsvp-modal").on "show.bs.tab", "#response-btn", (event) ->
 		$(event.target.previousElementSibling).removeClass "active"

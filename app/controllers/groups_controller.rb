@@ -12,13 +12,24 @@ class GroupsController < ApplicationController
 	end
 
 	def rsvp
-		@group = Group.find(params[:group_id])
-		@group.responses.each(&:destroy)
-		params[:response].each do |invite_id, member_ids|
-			member_ids.each do |member_id|
-				Response.create(invite_id: invite_id, member_id: member_id)
+		response_data = params[:response]
+		if response_data.present?
+			@group = Group.find(params[:group_id])
+			@group.responses.each(&:destroy)
+			create_responses_from_data
+			render nothing: true
+		else
+			head :bad_request
+		end
+	end
+
+	private
+
+		def create_responses_from_data
+			params[:response].each do |invite_id, member_ids|
+				member_ids.each do |member_id|
+					Response.create(invite_id: invite_id, member_id: member_id)
+				end
 			end
 		end
-		render nothing: true
-	end
 end
