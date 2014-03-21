@@ -12,10 +12,10 @@ class GroupsController < ApplicationController
 	end
 
 	def rsvp
+		@group = Group.find(params[:group_id])
+		@group.responses.each(&:destroy)
 		response_data = params[:response]
 		if response_data.present?
-			@group = Group.find(params[:group_id])
-			@group.responses.each(&:destroy)
 			create_responses_from_data
 			render nothing: true
 		else
