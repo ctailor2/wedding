@@ -2,7 +2,7 @@ class GroupsController < ApplicationController
 	respond_to :js
 
 	def find
-		@group = Group.find_by_rsvp_code(params[:rsvp_code])
+		@group = Group.ci_find_by_rsvp_code(params[:rsvp_code])
 		if @group.present?
 			@member = @group.members.new
 			render partial: "find"
