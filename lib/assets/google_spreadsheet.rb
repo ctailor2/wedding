@@ -9,7 +9,10 @@ class GoogleSpreadsheet
 	end
 
 	def connect
-		creds = HashWithIndifferentAccess.new(YAML.load_file('config/google_drive.yml'))[Rails.env]
+		creds = {}
+		creds[:email] = ENV['EMAIL']
+		creds[:password] = ENV['PASSWORD']
+		# creds = HashWithIndifferentAccess.new(YAML.load_file('config/google_drive.yml'))[Rails.env]
 		@session = GoogleDrive.login(creds[:email], creds[:password])
 	end
 
