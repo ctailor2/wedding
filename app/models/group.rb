@@ -14,8 +14,8 @@ class Group < ActiveRecord::Base
 
 	def generate_rsvp_code
 		self.rsvp_code = loop do
-			random_code = SecureRandom.hex(4).upcase
-			break random_code unless Group.exists?(rsvp_code: random_code)
+			random_code = SecureRandom.urlsafe_base64(4).upcase
+			break random_code unless Group.exists?(rsvp_code: random_code) || random_code.match(/[-_oO0]+/)
 		end
 	end
 end
