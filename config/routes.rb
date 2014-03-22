@@ -1,5 +1,9 @@
 Wedding::Application.routes.draw do
 	root 'application#index'
+	get '/our_story', to: 'application#our_story', as: 'our_story'
+	get '/events', to: 'application#events', as: 'events'
+	get '/bridal_party', to: 'application#bridal_party', as: 'bridal_party'
+	get '/photos', to: 'application#photos', as: 'photos'
 
 	post '/groups/find', to: 'groups#find', as: 'group_finder'
 	resources :groups, only: [] do

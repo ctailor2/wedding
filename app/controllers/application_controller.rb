@@ -6,6 +6,18 @@ class ApplicationController < ActionController::Base
 	def index
 	end
 
+	def our_story
+	end
+
+	def events
+	end
+
+	def bridal_party
+	end
+
+	def photos
+	end
+
 	private
 
 		def permitted_params

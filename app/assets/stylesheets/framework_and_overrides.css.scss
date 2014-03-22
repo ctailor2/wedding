@@ -13,6 +13,10 @@ body {
 	background-image: url(image_path("Chirag and Uma's Engagement-276.jpg"));
 }
 
+.bkgd-pic-our-story {
+	background-image: url(image_path("Our Story.jpg"));
+}
+
 .bkgd-pic-fill {
 	background-repeat: no-repeat;
 	background-position: center;
@@ -42,6 +46,29 @@ body {
 }
 
 .lead {
-	line-height: 1;
+	line-height: 1.2;
 	font-size: 16px;
+}
+
+.height-fill {
+	height: 100%;
+}
+
+.text-color-nav-default {
+	color: $navbar-default-bg;
+}
+
+.flex-column-centered {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	align-content: center;
+}
+
+.margin-auto {
+	margin: auto;
+}
+
+.text-center {
+	text-align: center;
 }
