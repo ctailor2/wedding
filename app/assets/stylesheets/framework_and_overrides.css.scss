@@ -58,6 +58,10 @@ body {
 	color: $navbar-default-bg;
 }
 
+.text-color-brand-info {
+	color: $brand-info;
+}
+
 .flex-column-centered {
 	display: flex;
 	flex-direction: column;
@@ -71,4 +75,24 @@ body {
 
 .text-center {
 	text-align: center;
+}
+
+.thumbnail {
+	margin-top: 15px;
+	margin-bottom: 0px;
+	background-color: rgba(91, 192, 222, 0.5);
+}
+
+.fluff-60 {
+	height: 60px;
+}
+
+.fluff-40 {
+	height: 40px;
+}
+
+.caption a {
+	color: $navbar-default-bg;
+	text-decoration: none;
+	border-bottom: 1px dotted $navbar-default-bg;
 }
