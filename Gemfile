@@ -52,3 +52,6 @@ gem 'pry', group: [:development, :test]
 
 # Use gem for google drive integration
 gem 'google_drive'
+
+# Use new relic for monitoring
+gem 'newrelic_rpm'
