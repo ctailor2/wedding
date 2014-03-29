@@ -3,7 +3,7 @@ require 'securerandom'
 class Group < ActiveRecord::Base
 	has_many :members
 	has_many :responses, through: :members
-	has_many :invites
+	has_many :invites, order: "event_id"
 	before_create :generate_rsvp_code
 
 	scope :ci_find_by_rsvp_code, lambda { |value| where("lower(rsvp_code) = ?", value.downcase).first }
