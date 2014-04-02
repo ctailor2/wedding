@@ -12,6 +12,9 @@ class ApplicationController < ActionController::Base
 	def events
 	end
 
+  def accomodations
+  end
+
 	def bridal_party
 	end
 

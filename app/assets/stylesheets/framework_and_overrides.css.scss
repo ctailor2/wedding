@@ -96,3 +96,19 @@ body {
 	text-decoration: none;
 	border-bottom: 1px dotted $navbar-default-bg;
 }
+
+.caption a:hover {
+	color: $navbar-default-bg;
+	text-decoration: none;
+	border-bottom: 1px dashed $navbar-default-bg;
+}
+
+a {
+  color: $brand-info;
+  text-decoration: none;
+}
+
+a:hover {
+  color: $brand-info;
+  text-decoration: none;
+}
