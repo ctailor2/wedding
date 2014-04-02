@@ -15,7 +15,7 @@ class ApplicationController < ActionController::Base
   def accomodations
   end
 
-	def bridal_party
+	def wedding_party
 	end
 
 	def photos
