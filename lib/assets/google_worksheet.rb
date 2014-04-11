@@ -23,8 +23,12 @@ class GoogleWorksheet
 		@session = GoogleDrive.login(creds[:email], creds[:password])
 	end
 
+  def non_event_titles
+    ["Name", "Code", "Side"]
+  end
+
   def event_titles
-    list.keys.reject { |key| ["Name", "Code"].include?(key) }
+    list.keys.reject { |key| non_event_titles.include?(key) }
   end
 
   def events
@@ -47,7 +51,7 @@ class GoogleWorksheet
     row = row(number)
     return unless row[:Code].blank?
 
-    group = Group.create(name: row[:Name])
+    group = Group.create(name: row[:Name], side: row[:Side])
     row[:Code] = group.rsvp_code
 
     event_titles.each do |title|
@@ -69,6 +73,7 @@ class GoogleWorksheet
     return if row[:Code].blank?
 
     group = Group.find_by_rsvp_code(row[:Code])
+    group.update_attributes(name: row[:Name], side: row[:Side])
     group.invites.destroy
 
     event_titles.each do |title|
