@@ -24,7 +24,7 @@ class GoogleWorksheet
 	end
 
   def non_event_titles
-    ["Name", "Code", "Side"]
+    ["Name", "Address1", "Address2", "Code", "Side"]
   end
 
   def event_titles
