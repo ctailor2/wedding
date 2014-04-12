@@ -74,6 +74,9 @@ class GoogleWorksheet
 
     group = Group.find_by_rsvp_code(row[:Code])
     group.update_attributes(name: row[:Name], side: row[:Side])
+    # TODO: Destroying may be a dangerous operation, in case responses have
+    # already started coming in for one or more invites. Need a more robust
+    # update row method.
     group.invites.destroy
 
     event_titles.each do |title|
