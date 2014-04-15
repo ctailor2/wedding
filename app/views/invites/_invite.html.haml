@@ -3,4 +3,5 @@
   %h5= "# Invited: #{invite.num_invited}"
   .panel-body
     %div{ class: "form-group invite-group", data: { invited: invite.num_invited } }
+      = render partial: "invites/none", locals: { invite: invite }
       = render partial: "invites/member", collection: group.saved(:members), locals: { invite: invite }

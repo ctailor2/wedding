@@ -1,5 +1,5 @@
 .checkbox.text-left
   %label
-    = check_box_tag "response[#{invite.id}][]", member.id, !invite.responses.where(invite_id: invite.id, member_id: member.id).empty?
+    = check_box_tag "response[#{invite.id}][]", member.id, !invite.responses.where(invite_id: invite.id, member_id: member.id).empty?, class: "member"
     = member.full_name
 
