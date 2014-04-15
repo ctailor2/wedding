@@ -55,9 +55,11 @@ class GoogleWorksheet
     row[:Code] = group.rsvp_code
 
     event_titles.each do |title|
-      num_invited = row[title]
+      num_invited = row[title].to_i
       event_id = event_id_reference[title]
-      group.create_invite(num_invited, event_id)
+      unless num_invited.blank? || num_invited.zero?
+        group.create_invite(num_invited, event_id)
+      end
     end
   end
 
@@ -76,7 +78,7 @@ class GoogleWorksheet
     group.update_attributes(name: row[:Name], side: row[:Side])
     # TODO: Destroying may be a dangerous operation, in case responses have
     # already started coming in for one or more invites. Need a more robust
-    # update row method.
+    # update row method. Also need to consider if num_invited is zero.
     group.invites.destroy
 
     event_titles.each do |title|
