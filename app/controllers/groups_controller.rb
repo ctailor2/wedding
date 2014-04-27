@@ -21,6 +21,9 @@ class GroupsController < ApplicationController
       update_none_from_data
       create_responses_from_data
       render nothing: true
+    elsif response_data.present?
+      create_responses_from_data
+      render nothing: true
     elsif none_data.present?
       update_none_from_data
       head :bad_request
