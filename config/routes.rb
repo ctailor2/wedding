@@ -1,4 +1,6 @@
 Wedding::Application.routes.draw do
+  devise_for :admin_users, ActiveAdmin::Devise.config
+  ActiveAdmin.routes(self)
 	root 'application#index'
 	get '/our_story', to: 'application#our_story', as: 'our_story'
 	get '/events', to: 'application#events', as: 'events'

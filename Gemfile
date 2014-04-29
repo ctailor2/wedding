@@ -55,3 +55,7 @@ gem 'google_drive'
 
 # Use new relic for monitoring
 gem 'newrelic_rpm'
+
+# Use active admin for the admin interface
+gem 'activeadmin', github: 'gregbell/active_admin'
+
