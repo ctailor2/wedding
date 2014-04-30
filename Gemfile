@@ -59,3 +59,6 @@ gem 'newrelic_rpm'
 # Use active admin for the admin interface
 gem 'activeadmin', github: 'gregbell/active_admin'
 
+# Use rollbar for exception monitoring
+gem 'rollbar'
+
