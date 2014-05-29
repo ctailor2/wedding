@@ -21,8 +21,7 @@ ActiveAdmin.register Group do
       row :rsvp_code
       row :side
       row :responded? do |group|
-        (group.responses.count > 0 ||
-         group.invites.any? { |invite| invite.none_attending? }) ? "Yes" : "No"
+        group.responded? ? "Yes" : "No"
       end
     end
 
