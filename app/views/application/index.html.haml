@@ -1,7 +1,7 @@
 .bkgd-pic-root.bkgd-pic-fill
   = render "layouts/flash"
   .row.rsvp-bar.bkgd-opaque-teal
-    = form_tag(group_finder_path, id: "group-finder-form", remote: true) do
+    = form_tag(group_finder_path, id: "group-finder-form", remote: true, authenticity_token: true) do
       .form-group
         .col-lg-4.col-md-4.col-sm-3.col-xs-2
         .col-lg-4.col-md-4.col-sm-6.col-xs-8

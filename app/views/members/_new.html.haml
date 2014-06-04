@@ -1,7 +1,7 @@
 .panel.panel-default
   .panel-body
     %p.lead Add the members of your party here, then indicate their attendance on the next tab
-    = form_for [group, member], remote: true, html: { class: "form form-inline", id: "add-member-form" } do |f|
+    = form_for [group, member], remote: true, authenticity_token: true, html: { class: "form form-inline", id: "add-member-form" } do |f|
       .form-group
         = f.text_field :first_name, class: "form-control", placeholder: "First Name", required: "required"
         = f.text_field :last_name, class: "form-control", placeholder: "Last Name", required: "required"
