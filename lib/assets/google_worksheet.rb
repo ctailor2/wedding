@@ -1,11 +1,12 @@
 class GoogleWorksheet
-  attr_reader :session, :title, :worksheet, :list, :event_id_reference
+  attr_reader :session, :title, :worksheet, :summary_worksheet, :list, :event_id_reference
 
   def initialize(key)
     connect
     spreadsheet = session.spreadsheet_by_key(key)
     @title = spreadsheet.title
     @worksheet = spreadsheet.worksheets[0]
+    @summary_worksheet = spreadsheet.worksheets[1]
     @list = worksheet.list
     @event_id_reference = event_title_id_lookup
   end
@@ -101,5 +102,13 @@ class GoogleWorksheet
 
   def reload
     worksheet.reload
+  end
+
+  def export_rsvp_data(side)
+    data = Group.by_side(side).map do |group|
+      group.format_for_export
+    end
+    summary_worksheet.update_cells(2, 1, data)
+    summary_worksheet.save
   end
 end

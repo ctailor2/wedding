@@ -66,4 +66,9 @@ class Group < ActiveRecord::Base
   def responded?
     responses.count > 0 || invites.any? { |invite| invite.none_attending? }
   end
+
+  def format_for_export
+    row_data = invites.map { |invite| invite.total_and_attendees }
+    row_data.unshift(name)
+  end
 end
